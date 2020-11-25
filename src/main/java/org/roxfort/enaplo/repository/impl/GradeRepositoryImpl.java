@@ -57,6 +57,16 @@ public class GradeRepositoryImpl implements GradeRepository {
 
     @Override
     public void submitGrade(Grade grade) {
-        System.out.println("Mentés adatbázisba ...");
+        try {
+            session = sessionFactory.openSession();
+            session.beginTransaction();
+
+            // TODO: Mentés adatbázisba ...
+        } catch (Exception ex) {
+            session.getTransaction().rollback();
+            throw new RuntimeException("Jegy rögzítése sikertelen!");
+        } finally {
+            session.close();
+        }
     }
 }
