@@ -37,17 +37,27 @@ public class HomeController implements Initializable {
     @FXML
     private TableColumn<Grade, String> tableColumnGradeValue;
 
-    private final HouseRepository houseRepository;
+    @FXML
+    private ComboBox<Subject> comboBoxSubjects;
+
+    @FXML
+    private ComboBox<Integer> comboBoxGradeValues;
+
     private final GradeRepository gradeRepository;
+    private final HouseRepository houseRepository;
+    private final SubjectRepository subjectRepository;
 
     public HomeController() {
-        houseRepository = new HouseRepositoryImpl();
         gradeRepository = new GradeRepositoryImpl();
+        houseRepository = new HouseRepositoryImpl();
+        subjectRepository = new SubjectRepositoryImpl();
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         initializeTableViewHouses();
+        initializeComboBoxSubjects();
+        initializeComboBoxGradeValues();
     }
 
     private void initializeTableViewHouses() {
@@ -96,6 +106,14 @@ public class HomeController implements Initializable {
         tableViewGrades.setItems(grades);
     }
 
+    private void initializeComboBoxSubjects() {
+        comboBoxSubjects.getItems().addAll(subjectRepository.getSubjects());
+    }
+
+    private void initializeComboBoxGradeValues() {
+        comboBoxGradeValues.getItems().addAll(gradeRepository.getGradeValues());
+    }
+
     private Student getSelectedStudent() {
         return tableViewStudents.getSelectionModel().getSelectedItem();
     }
@@ -121,10 +139,10 @@ public class HomeController implements Initializable {
         Student student = getSelectedStudent();
 
         if (student == null) {
-            MessageBox.show(Alert.AlertType.WARNING, "Nincs kijelölt diák");
+            MessageBox.show(Alert.AlertType.WARNING, "Nincs kijelölt diák!");
             return;
         }
 
-        System.out.println("Jegy rögzítése ...");
+        // TODO: Jegy rögzítése ...
     }
 }

@@ -7,17 +7,15 @@ import org.roxfort.enaplo.model.Grade;
 import org.roxfort.enaplo.model.House;
 import org.roxfort.enaplo.model.Student;
 import org.roxfort.enaplo.model.Subject;
-import org.roxfort.enaplo.repository.GradeRepository;
+import org.roxfort.enaplo.repository.SubjectRepository;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class GradeRepositoryImpl implements GradeRepository {
+public class SubjectRepositoryImpl implements SubjectRepository {
     private final SessionFactory sessionFactory;
     private Session session;
 
-    public GradeRepositoryImpl() {
+    public SubjectRepositoryImpl() {
         sessionFactory = new Configuration()
                 .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(Student.class)
@@ -27,31 +25,16 @@ public class GradeRepositoryImpl implements GradeRepository {
                 .buildSessionFactory();
     }
 
-    private List<Grade> getGrades() {
+    @Override
+    public List<Subject> getSubjects() {
         try {
             session = sessionFactory.openSession();
             session.beginTransaction();
-            return session.createQuery("from Grade").list();
+            return session.createQuery("from Subject").list();
         } catch (Exception ex) {
             throw new RuntimeException(ex.getMessage());
         } finally {
             session.close();
         }
-    }
-
-    @Override
-    public List<Grade> getGrades(Student student) {
-        for (Grade grade : getGrades()) {
-            if (grade.getStudent().getFirstName().equals(student.getFirstName()) &&
-                    grade.getStudent().getLastName().equals(student.getLastName()))
-                return student.getGrades();
-        }
-
-        return null;
-    }
-
-    @Override
-    public List<Integer> getGradeValues() {
-        return new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
     }
 }
