@@ -37,7 +37,9 @@ public class HomeController implements Initializable {
         ObservableList<House> houses = FXCollections.observableArrayList();
         houses.addAll(houseRepository.getHouses());
 
-        tableColumnHouseName.setCellValueFactory(x -> new SimpleStringProperty(x.getValue().getName()));
+        tableColumnHouseName.setCellValueFactory(house ->
+                new SimpleStringProperty(house.getValue().getName()));
+
         tableViewHouses.setItems(houses);
     }
 }
