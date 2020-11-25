@@ -1,6 +1,8 @@
 package org.roxfort.enaplo.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "students")
@@ -21,8 +23,11 @@ public class Student {
     @JoinColumn(name = "house_id")
     private House house;
 
-    public Student() {
+    @OneToMany(mappedBy = "grade", fetch = FetchType.EAGER)
+    public final List<Grade> grades;
 
+    public Student() {
+        grades = new ArrayList<>();
     }
 
     public String getFirstName() {

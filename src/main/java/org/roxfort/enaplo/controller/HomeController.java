@@ -9,7 +9,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import org.roxfort.enaplo.model.House;
 import org.roxfort.enaplo.model.Student;
+import org.roxfort.enaplo.repository.GradeRepository;
 import org.roxfort.enaplo.repository.HouseRepository;
+import org.roxfort.enaplo.repository.impl.GradeRepositoryImpl;
 import org.roxfort.enaplo.repository.impl.HouseRepositoryImpl;
 
 import java.net.URL;
@@ -33,9 +35,11 @@ public class HomeController implements Initializable {
     private TableColumn<Student, String> tableColumnStudentLastName;
 
     private final HouseRepository houseRepository;
+    private final GradeRepository gradeRepository;
 
     public HomeController() {
         houseRepository = new HouseRepositoryImpl();
+        gradeRepository = new GradeRepositoryImpl();
     }
 
     @Override
