@@ -45,6 +45,6 @@ public class GradeRepositoryImpl implements GradeRepository {
                 return student.getGrades();
         }
 
-        throw new RuntimeException("Ismeretlen diák");
+        return null;
     }
 }

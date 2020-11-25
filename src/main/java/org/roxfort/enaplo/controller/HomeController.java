@@ -16,6 +16,7 @@ import org.roxfort.enaplo.repository.impl.GradeRepositoryImpl;
 import org.roxfort.enaplo.repository.impl.HouseRepositoryImpl;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class HomeController implements Initializable {
@@ -78,9 +79,15 @@ public class HomeController implements Initializable {
     }
 
     private void initializeTableViewGrades(Student student) {
+        List<Grade> studentGrades = gradeRepository.getGrades(student);
+
+        if (studentGrades == null) {
+            tableViewGrades.setItems(null);
+            return;
+        }
+
         ObservableList<Grade> grades = FXCollections.observableArrayList();
         grades.addAll(gradeRepository.getGrades(student));
-
         tableColumnGradeSubjectName.setCellValueFactory(grade ->
                 new SimpleStringProperty(grade.getValue().getSubject().getName()));
         tableColumnGradeValue.setCellValueFactory(grade ->
