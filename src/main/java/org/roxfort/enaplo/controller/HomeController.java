@@ -42,4 +42,10 @@ public class HomeController implements Initializable {
 
         tableViewHouses.setItems(houses);
     }
+
+    @FXML
+    private void tableViewHouses_Select() {
+        House selectedHouse = tableViewHouses.getSelectionModel().getSelectedItem();
+        System.out.println(selectedHouse.getName());
+    }
 }

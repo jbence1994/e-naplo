@@ -26,7 +26,7 @@
                                 <Color blue="0.624" green="0.624" red="0.624" fx:id="x2"/>
                             </textFill>
                         </Label>
-                        <TableView fx:id="tableViewHouses" layoutX="27.0" layoutY="58.0" prefHeight="695.0"
+                        <TableView fx:id="tableViewHouses" onMouseClicked="#tableViewHouses_Select" layoutX="27.0" layoutY="58.0" prefHeight="695.0"
                                    prefWidth="200.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0"
                                    AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
                             <columns>
