@@ -24,4 +24,12 @@ public class Student {
     public Student() {
 
     }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
 }

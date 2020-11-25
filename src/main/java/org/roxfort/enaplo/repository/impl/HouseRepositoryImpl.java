@@ -10,22 +10,20 @@ import org.roxfort.enaplo.repository.HouseRepository;
 import java.util.List;
 
 public class HouseRepositoryImpl implements HouseRepository {
-
-    private final Session session;
+    private final SessionFactory sessionFactory;
+    private Session session;
 
     public HouseRepositoryImpl() {
-        SessionFactory sessionFactory = new Configuration()
+        sessionFactory = new Configuration()
                 .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(Student.class)
                 .addAnnotatedClass(House.class)
                 .buildSessionFactory();
-
-        session = sessionFactory.getCurrentSession();
     }
-
 
     public List<House> getHouses() {
         try {
+            session = sessionFactory.openSession();
             session.beginTransaction();
             return session.createQuery("from House").list();
         } catch (Exception ex) {
@@ -33,5 +31,15 @@ public class HouseRepositoryImpl implements HouseRepository {
         } finally {
             session.close();
         }
+    }
+
+    @Override
+    public List<Student> getStudents(String name) {
+        for (House house : getHouses()) {
+            if (house.getName().equals(name))
+                return house.getStudents();
+        }
+
+        throw new RuntimeException("Ismeretlen ház");
     }
 }

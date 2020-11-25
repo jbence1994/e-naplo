@@ -26,4 +26,8 @@ public class House {
     public String getName() {
         return name;
     }
+
+    public List<Student> getStudents() {
+        return students;
+    }
 }
