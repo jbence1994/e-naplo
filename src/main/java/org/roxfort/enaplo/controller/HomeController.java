@@ -88,6 +88,7 @@ public class HomeController implements Initializable {
 
         ObservableList<Grade> grades = FXCollections.observableArrayList();
         grades.addAll(gradeRepository.getGrades(student));
+        
         tableColumnGradeSubjectName.setCellValueFactory(grade ->
                 new SimpleStringProperty(grade.getValue().getSubject().getName()));
         tableColumnGradeValue.setCellValueFactory(grade ->
