@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import org.roxfort.enaplo.model.Grade;
 import org.roxfort.enaplo.model.House;
 import org.roxfort.enaplo.model.Student;
 import org.roxfort.enaplo.repository.GradeRepository;
@@ -26,6 +27,9 @@ public class HomeController implements Initializable {
     private TableView<Student> tableViewStudents;
 
     @FXML
+    private TableView<Grade> tableViewGrades;
+
+    @FXML
     private TableColumn<House, String> tableColumnHouseName;
 
     @FXML
@@ -33,6 +37,12 @@ public class HomeController implements Initializable {
 
     @FXML
     private TableColumn<Student, String> tableColumnStudentLastName;
+
+    @FXML
+    private TableColumn<Grade, String> tableColumnGradeSubjectName;
+
+    @FXML
+    private TableColumn<Grade, String> tableColumnGradeValue;
 
     private final HouseRepository houseRepository;
     private final GradeRepository gradeRepository;
@@ -67,9 +77,26 @@ public class HomeController implements Initializable {
         tableViewStudents.setItems(students);
     }
 
+    private void initializeTableViewGrades(Student student) {
+        ObservableList<Grade> grades = FXCollections.observableArrayList();
+        grades.addAll(gradeRepository.getGrades(student));
+
+        tableColumnGradeSubjectName.setCellValueFactory(grade ->
+                new SimpleStringProperty(grade.getValue().getSubject().getName()));
+        tableColumnGradeValue.setCellValueFactory(grade ->
+                new SimpleStringProperty(String.valueOf(grade.getValue().getValue())));
+        tableViewGrades.setItems(grades);
+    }
+
     @FXML
     private void tableViewHouses_Select() {
         House selectedHouse = tableViewHouses.getSelectionModel().getSelectedItem();
         initializeTableViewStudents(selectedHouse.getName());
+    }
+
+    @FXML
+    private void tableViewStudents_Select() {
+        Student selectedStudent = tableViewStudents.getSelectionModel().getSelectedItem();
+        initializeTableViewGrades(selectedStudent);
     }
 }

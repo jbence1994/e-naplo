@@ -42,6 +42,7 @@
                         <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="Tanulók"
                                textAlignment="CENTER" textFill="$x2" wrapText="false"/>
                         <TableView fx:id="tableViewStudents" layoutX="15.0" layoutY="60.0" prefHeight="282.0"
+                                   onMouseClicked="#tableViewStudents_Select"
                                    prefWidth="505.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
                                    AnchorPane.topAnchor="60.0">
                             <columns>
@@ -61,8 +62,10 @@
                                    prefWidth="176.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
                                    AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
                             <columns>
-                                <TableColumn minWidth="125.0" prefWidth="75.0" text="Tantárgy"/>
-                                <TableColumn minWidth="125.0" prefWidth="75.0" text="Érdemjegy"/>
+                                <TableColumn fx:id="tableColumnGradeSubjectName" minWidth="125.0" prefWidth="75.0"
+                                             text="Tantárgy"/>
+                                <TableColumn fx:id="tableColumnGradeValue" minWidth="125.0" prefWidth="75.0"
+                                             text="Érdemjegy"/>
                             </columns>
                         </TableView>
                     </children>

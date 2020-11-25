@@ -37,4 +37,8 @@ public class Student {
     public String getLastName() {
         return lastName;
     }
+
+    public List<Grade> getGrades() {
+        return grades;
+    }
 }

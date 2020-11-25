@@ -25,8 +25,7 @@ public class GradeRepositoryImpl implements GradeRepository {
                 .buildSessionFactory();
     }
 
-    @Override
-    public List<Grade> getGrades(Student student) {
+    private List<Grade> getGrades() {
         try {
             session = sessionFactory.openSession();
             session.beginTransaction();
@@ -36,5 +35,16 @@ public class GradeRepositoryImpl implements GradeRepository {
         } finally {
             session.close();
         }
+    }
+
+    @Override
+    public List<Grade> getGrades(Student student) {
+        for (Grade grade : getGrades()) {
+            if (grade.getStudent().getFirstName().equals(student.getFirstName()) &&
+                    grade.getStudent().getLastName().equals(student.getLastName()))
+                return student.getGrades();
+        }
+
+        throw new RuntimeException("Ismeretlen diák");
     }
 }

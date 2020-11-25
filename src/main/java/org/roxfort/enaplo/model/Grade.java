@@ -21,4 +21,16 @@ public class Grade {
 
     @Column(name = "value")
     private int value;
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public Subject getSubject() {
+        return subject;
+    }
+
+    public int getValue() {
+        return value;
+    }
 }
