@@ -60,8 +60,7 @@ public class GradeRepositoryImpl implements GradeRepository {
         try {
             session = sessionFactory.openSession();
             session.beginTransaction();
-
-            // TODO: Mentés adatbázisba ...
+            session.save(grade);
         } catch (Exception ex) {
             session.getTransaction().rollback();
             throw new RuntimeException("Jegy rögzítése sikertelen!");
