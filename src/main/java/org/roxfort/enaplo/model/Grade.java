@@ -22,6 +22,16 @@ public class Grade {
     @Column(name = "value")
     private int value;
 
+    public Grade() {
+
+    }
+
+    public Grade(Student student, Subject subject, int value) {
+        this.student = student;
+        this.subject = subject;
+        this.value = value;
+    }
+
     public Student getStudent() {
         return student;
     }

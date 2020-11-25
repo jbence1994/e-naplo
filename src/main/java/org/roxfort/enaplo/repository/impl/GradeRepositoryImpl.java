@@ -54,4 +54,9 @@ public class GradeRepositoryImpl implements GradeRepository {
     public List<Integer> getGradeValues() {
         return new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
     }
+
+    @Override
+    public void submitGrade(Grade grade) {
+        System.out.println("Mentés adatbázisba ...");
+    }
 }

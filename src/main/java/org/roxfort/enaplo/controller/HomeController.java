@@ -122,6 +122,14 @@ public class HomeController implements Initializable {
         return tableViewHouses.getSelectionModel().getSelectedItem();
     }
 
+    private Subject getSelectedSubject() {
+        return comboBoxSubjects.getSelectionModel().getSelectedItem();
+    }
+
+    private Integer getSelectedGradeValue() {
+        return comboBoxGradeValues.getSelectionModel().getSelectedItem();
+    }
+
     @FXML
     private void tableViewHouses_Select() {
         House selectedHouse = getSelectedHouse();
@@ -136,13 +144,29 @@ public class HomeController implements Initializable {
 
     @FXML
     private void buttonSubmit_Click() {
-        Student student = getSelectedStudent();
+        Student selectedStudent = getSelectedStudent();
 
-        if (student == null) {
+        if (selectedStudent == null) {
             MessageBox.show(Alert.AlertType.WARNING, "Nincs kijelölt diák!");
             return;
         }
 
-        // TODO: Jegy rögzítése ...
+        Subject selectedSubject = getSelectedSubject();
+
+        if (selectedSubject == null) {
+            MessageBox.show(Alert.AlertType.WARNING, "Nincs kijelölt tantárgy!");
+            return;
+        }
+
+        Integer gradeValue = getSelectedGradeValue();
+
+        if (gradeValue == null) {
+            MessageBox.show(Alert.AlertType.WARNING, "Nincs kijelölt érdemjegy!");
+            return;
+        }
+
+        gradeRepository.submitGrade(new Grade(selectedStudent, selectedSubject, gradeValue));
+
+        // TODO: re init table on right ...
     }
 }

@@ -9,4 +9,6 @@ public interface GradeRepository {
     List<Grade> getGrades(Student student);
 
     List<Integer> getGradeValues();
+
+    void submitGrade(Grade grade);
 }
