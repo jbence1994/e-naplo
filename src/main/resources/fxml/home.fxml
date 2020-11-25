@@ -26,8 +26,8 @@
                             </textFill>
                         </Label>
                         <TableView fx:id="tableViewHouses" layoutX="27.0" layoutY="58.0" prefHeight="695.0"
-                                   prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                                   AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="58.0">
+                                   prefWidth="200.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0"
+                                   AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
                             <columns>
                                 <TableColumn prefWidth="75.0" text="C1"/>
                                 <TableColumn prefWidth="75.0" text="C2"/>
@@ -40,8 +40,8 @@
                         <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="Tanulók"
                                textAlignment="CENTER" textFill="$x2" wrapText="false"/>
                         <TableView fx:id="tableViewStudents" layoutX="15.0" layoutY="60.0" prefHeight="695.0"
-                                   prefWidth="482.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                                   AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="58.0">
+                                   prefWidth="482.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0"
+                                   AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
                             <columns>
                                 <TableColumn prefWidth="75.0" text="C1"/>
                                 <TableColumn prefWidth="75.0" text="C2"/>
@@ -54,8 +54,8 @@
                         <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;"
                                text="Érdemjegyek" textAlignment="CENTER" textFill="$x2" wrapText="false"/>
                         <TableView fx:id="tableViewGrades" layoutX="26.0" layoutY="57.0" prefHeight="695.0"
-                                   prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                                   AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="58.0">
+                                   prefWidth="200.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0"
+                                   AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
                             <columns>
                                 <TableColumn prefWidth="75.0" text="C1"/>
                                 <TableColumn prefWidth="75.0" text="C2"/>
