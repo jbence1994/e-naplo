@@ -1,22 +1,14 @@
 package org.roxfort.enaplo.controller;
 
 import javafx.beans.property.SimpleStringProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import org.roxfort.enaplo.model.Grade;
-import org.roxfort.enaplo.model.House;
-import org.roxfort.enaplo.model.Student;
-import org.roxfort.enaplo.repository.GradeRepository;
-import org.roxfort.enaplo.repository.HouseRepository;
-import org.roxfort.enaplo.repository.impl.GradeRepositoryImpl;
-import org.roxfort.enaplo.repository.impl.HouseRepositoryImpl;
+import javafx.collections.*;
+import javafx.fxml.*;
+import javafx.scene.control.*;
+import org.roxfort.enaplo.model.*;
+import org.roxfort.enaplo.repository.*;
+import org.roxfort.enaplo.repository.impl.*;
 
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class HomeController implements Initializable {
