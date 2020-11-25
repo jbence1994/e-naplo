@@ -59,6 +59,12 @@ public class HomeController implements Initializable {
     }
 
     private void initializeTableViewHouses() {
+        if (houseRepository.getHouses().isEmpty() ||
+                houseRepository.getHouses() == null) {
+            tableViewHouses.setItems(null);
+            return;
+        }
+
         ObservableList<House> houses = FXCollections.observableArrayList();
         houses.addAll(houseRepository.getHouses());
 
@@ -68,6 +74,12 @@ public class HomeController implements Initializable {
     }
 
     private void initializeTableViewStudents(String houseName) {
+        if (houseRepository.getStudents(houseName).isEmpty() ||
+                houseRepository.getStudents(houseName) == null) {
+            tableViewStudents.setItems(null);
+            return;
+        }
+
         ObservableList<Student> students = FXCollections.observableArrayList();
         students.addAll(houseRepository.getStudents(houseName));
 
@@ -79,9 +91,8 @@ public class HomeController implements Initializable {
     }
 
     private void initializeTableViewGrades(Student student) {
-        List<Grade> studentGrades = gradeRepository.getGrades(student);
-
-        if (studentGrades == null) {
+        if (gradeRepository.getGrades(student).isEmpty() ||
+                gradeRepository.getGrades(student) == null) {
             tableViewGrades.setItems(null);
             return;
         }
