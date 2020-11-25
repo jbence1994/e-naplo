@@ -107,4 +107,9 @@ public class HomeController implements Initializable {
         Student selectedStudent = tableViewStudents.getSelectionModel().getSelectedItem();
         initializeTableViewGrades(selectedStudent);
     }
+
+    @FXML
+    private void buttonSubmit_Click() {
+        System.out.println("Jegy rögzítése ...");
+    }
 }
