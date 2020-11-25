@@ -3,11 +3,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             maxWidth="1024" maxHeight="768"
             stylesheets="/css/app.css"
             fx:controller="org.roxfort.enaplo.controller.HomeController">
-    <Button fx:id="buttonSubmit" styleClass="button" text="Rögzítés" onMouseClicked="#buttonSubmit_Click"/>
-    <Button fx:id="buttonExit" styleClass="button" text="Kilépés" onMouseClicked="#buttonExit_Click"/>
+    <HBox>
+        <Button fx:id="buttonSubmit" styleClass="button" text="Rögzítés" onMouseClicked="#buttonSubmit_Click"/>
+        <Button fx:id="buttonExit" styleClass="button" text="Kilépés" onMouseClicked="#buttonExit_Click"/>
+    </HBox>
 </AnchorPane>
