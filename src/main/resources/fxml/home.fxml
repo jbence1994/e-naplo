@@ -43,7 +43,7 @@
                         </TableView>
                   <ComboBox fx:id="comboBoxSubjects" layoutX="14.0" layoutY="727.0" prefWidth="150.0" promptText="Tantárgy..." AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" />
                   <Button fx:id="buttonSubmit" layoutX="341.0" layoutY="727.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Érdemjegy rögzítése" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" />
-                  <ComboBox layoutX="178.0" layoutY="727.0" prefWidth="150.0" promptText="Érdemjegy..." AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="178.0" AnchorPane.rightAnchor="177.0" />
+                  <ComboBox fx:id="comboBoxGradeValues" layoutX="178.0" layoutY="727.0" prefWidth="150.0" promptText="Érdemjegy..." AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="178.0" AnchorPane.rightAnchor="177.0" />
                     </children>
                 </AnchorPane>
                 <AnchorPane>
