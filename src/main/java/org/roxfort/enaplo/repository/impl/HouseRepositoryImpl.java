@@ -44,6 +44,6 @@ public class HouseRepositoryImpl implements HouseRepository {
                 return house.getStudents();
         }
 
-        throw new RuntimeException("Ismeretlen ház");
+        return null;
     }
 }
