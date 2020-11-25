@@ -26,13 +26,13 @@
                                 <Color blue="0.624" green="0.624" red="0.624" fx:id="x2"/>
                             </textFill>
                         </Label>
-                        <TableView fx:id="tableViewHouses" onMouseClicked="#tableViewHouses_Select" layoutX="27.0"
-                                   layoutY="58.0" prefHeight="695.0"
-                                   prefWidth="200.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0"
+                        <TableView fx:id="tableViewHouses" layoutX="27.0" layoutY="58.0"
+                                   onMouseClicked="#tableViewHouses_Select" prefHeight="695.0" prefWidth="200.0"
+                                   AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
                                    AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
                             <columns>
-                                <TableColumn fx:id="tableColumnHouseName" minWidth="250.0"
-                                             prefWidth="75.0" resizable="false" text="Név"/>
+                                <TableColumn fx:id="tableColumnHouseName" minWidth="250.0" prefWidth="75.0"
+                                             resizable="false" text="Név"/>
                             </columns>
                         </TableView>
                     </children>
@@ -45,18 +45,10 @@
                                    prefWidth="505.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
                                    AnchorPane.topAnchor="60.0">
                             <columns>
-                                <TableColumn fx:id="tableColumnStudentFirstName" minWidth="250.0"
-                                             prefWidth="75.0" resizable="false" text="Keresztnév"/>
-                                <TableColumn fx:id="tableColumnStudentLastName" minWidth="250.0"
-                                             prefWidth="75.0" resizable="false" text="Vezetéknév"/>
-                            </columns>
-                        </TableView>
-                        <TableView fx:id="tableViewGrades" layoutX="16.0" layoutY="341.0" prefHeight="365.0"
-                                   prefWidth="505.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0"
-                                   AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="341.0">
-                            <columns>
-                                <TableColumn prefWidth="75.0" text="C1"/>
-                                <TableColumn prefWidth="75.0" text="C2"/>
+                                <TableColumn fx:id="tableColumnStudentFirstName" minWidth="250.0" prefWidth="75.0"
+                                             resizable="false" text="Keresztnév"/>
+                                <TableColumn fx:id="tableColumnStudentLastName" minWidth="250.0" prefWidth="75.0"
+                                             resizable="false" text="Vezetéknév"/>
                             </columns>
                         </TableView>
                     </children>
@@ -65,6 +57,14 @@
                     <children>
                         <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;"
                                text="Érdemjegyek" textAlignment="CENTER" textFill="$x2" wrapText="false"/>
+                        <TableView fx:id="tableViewGrades" layoutX="29.0" layoutY="65.0" prefHeight="365.0"
+                                   prefWidth="176.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                   AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+                            <columns>
+                                <TableColumn minWidth="125.0" prefWidth="75.0" text="Tantárgy"/>
+                                <TableColumn minWidth="125.0" prefWidth="75.0" text="Érdemjegy"/>
+                            </columns>
+                        </TableView>
                     </children>
                 </AnchorPane>
             </items>
