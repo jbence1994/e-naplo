@@ -12,6 +12,8 @@ public class App extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/home.fxml"));
 
         primaryStage.setTitle("e-napló | Roxfort");
+        primaryStage.setResizable(false);
+
         primaryStage.setScene(new Scene(root, 1024, 768));
         primaryStage.show();
     }

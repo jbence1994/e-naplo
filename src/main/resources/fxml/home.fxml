@@ -2,9 +2,10 @@
 
 <?import javafx.scene.layout.AnchorPane?>
 
+<?import javafx.scene.control.Button?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.roxfort.enaplo.controller.HomeController"
-            maxWidth="1024" maxHeight="768">
-
+            maxWidth="1024" maxHeight="768"
+            fx:controller="org.roxfort.enaplo.controller.HomeController">
+    <Button fx:id="buttonSubmit" styleClass="button" text="Rögzítés" onMouseClicked="#buttonSubmit_Click"/>
 </AnchorPane>
