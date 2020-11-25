@@ -51,8 +51,7 @@ public class HomeController implements Initializable {
     }
 
     private void initializeTableViewHouses() {
-        if (houseRepository.getHouses().isEmpty() ||
-                houseRepository.getHouses() == null) {
+        if (houseRepository.getHouses() == null) {
             tableViewHouses.setItems(null);
             return;
         }
@@ -66,8 +65,7 @@ public class HomeController implements Initializable {
     }
 
     private void initializeTableViewStudents(String houseName) {
-        if (houseRepository.getStudents(houseName).isEmpty() ||
-                houseRepository.getStudents(houseName) == null) {
+        if (houseRepository.getStudents(houseName) == null) {
             tableViewStudents.setItems(null);
             return;
         }
@@ -83,8 +81,7 @@ public class HomeController implements Initializable {
     }
 
     private void initializeTableViewGrades(Student student) {
-        if (gradeRepository.getGrades(student).isEmpty() ||
-                gradeRepository.getGrades(student) == null) {
+        if (gradeRepository.getGrades(student) == null) {
             tableViewGrades.setItems(null);
             return;
         }
