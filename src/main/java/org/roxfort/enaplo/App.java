@@ -6,7 +6,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 public class App extends Application {
 
@@ -19,9 +18,6 @@ public class App extends Application {
                 .getResource("/fxml/home.fxml"));
 
         primaryStage.setTitle("e-napló | Roxfort");
-        primaryStage.setResizable(false);
-        primaryStage.initStyle(StageStyle.UNDECORATED);
-
         primaryStage.setScene(new Scene(root, 1024, 768));
         primaryStage.show();
     }
