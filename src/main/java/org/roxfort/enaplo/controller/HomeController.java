@@ -96,20 +96,35 @@ public class HomeController implements Initializable {
         tableViewGrades.setItems(grades);
     }
 
+    private Student getSelectedStudent() {
+        return tableViewStudents.getSelectionModel().getSelectedItem();
+    }
+
+    private House getSelectedHouse() {
+        return tableViewHouses.getSelectionModel().getSelectedItem();
+    }
+
     @FXML
     private void tableViewHouses_Select() {
-        House selectedHouse = tableViewHouses.getSelectionModel().getSelectedItem();
+        House selectedHouse = getSelectedHouse();
         initializeTableViewStudents(selectedHouse.getName());
     }
 
     @FXML
     private void tableViewStudents_Select() {
-        Student selectedStudent = tableViewStudents.getSelectionModel().getSelectedItem();
+        Student selectedStudent = getSelectedStudent();
         initializeTableViewGrades(selectedStudent);
     }
 
     @FXML
     private void buttonSubmit_Click() {
+        Student student = getSelectedStudent();
+
+        if (student == null) {
+            MessageBox.show(Alert.AlertType.WARNING, "Nincs kijelölt diák");
+            return;
+        }
+
         System.out.println("Jegy rögzítése ...");
     }
 }
