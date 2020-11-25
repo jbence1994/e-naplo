@@ -73,10 +73,12 @@
                                    prefWidth="176.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
                                    AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
                             <columns>
-                                <TableColumn fx:id="tableColumnGradeSubjectName" minWidth="125.0" prefWidth="75.0"
+                                <TableColumn fx:id="tableColumnGradeSubjectName" minWidth="75.0" prefWidth="75.0"
                                              text="Tantárgy"/>
-                                <TableColumn fx:id="tableColumnGradeValue" minWidth="125.0" prefWidth="75.0"
+                                <TableColumn fx:id="tableColumnGradeValue" minWidth="75.0" prefWidth="75.0"
                                              text="Érdemjegy"/>
+                                <TableColumn fx:id="tableColumnGradeDateRecorded" minWidth="75.0" prefWidth="75.0"
+                                             text="Rögzítve"/>
                             </columns>
                         </TableView>
                     </children>
