@@ -23,7 +23,7 @@ public class Student {
     @JoinColumn(name = "house_id")
     private House house;
 
-    @OneToMany(mappedBy = "grade", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "student", fetch = FetchType.EAGER)
     public final List<Grade> grades;
 
     public Student() {

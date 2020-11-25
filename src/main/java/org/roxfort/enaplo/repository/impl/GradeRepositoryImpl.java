@@ -6,6 +6,7 @@ import org.hibernate.cfg.Configuration;
 import org.roxfort.enaplo.model.Grade;
 import org.roxfort.enaplo.model.House;
 import org.roxfort.enaplo.model.Student;
+import org.roxfort.enaplo.model.Subject;
 import org.roxfort.enaplo.repository.GradeRepository;
 
 import java.util.List;
@@ -19,6 +20,8 @@ public class GradeRepositoryImpl implements GradeRepository {
                 .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(Student.class)
                 .addAnnotatedClass(House.class)
+                .addAnnotatedClass(Grade.class)
+                .addAnnotatedClass(Subject.class)
                 .buildSessionFactory();
     }
 

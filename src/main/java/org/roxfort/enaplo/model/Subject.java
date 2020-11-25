@@ -16,7 +16,7 @@ public class Subject {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(mappedBy = "grade", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "subject", fetch = FetchType.EAGER)
     public final List<Grade> grades;
 
     public Subject() {
