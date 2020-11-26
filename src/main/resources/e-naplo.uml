@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>Persistence</ID>
+  <OriginalElement>JavaeeElement:/422fc71b/e-naplo/e-naplo/jpa/JPA/PersistenceModel</OriginalElement>
+  <nodes>
+    <node x="35.0" y="422.0">Subject#file://C:/Users/bebe/Desktop/e-naplo/src/main/java/org/roxfort/enaplo/model/Subject.java</node>
+    <node x="22.5" y="126.0">Student#file://C:/Users/bebe/Desktop/e-naplo/src/main/java/org/roxfort/enaplo/model/Student.java</node>
+    <node x="0.0" y="274.0">Grade#file://C:/Users/bebe/Desktop/e-naplo/src/main/java/org/roxfort/enaplo/model/Grade.java</node>
+    <node x="35.0" y="0.0">House#file://C:/Users/bebe/Desktop/e-naplo/src/main/java/org/roxfort/enaplo/model/House.java</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Student#file://C:/Users/bebe/Desktop/e-naplo/src/main/java/org/roxfort/enaplo/model/Student.java" target="House#file://C:/Users/bebe/Desktop/e-naplo/src/main/java/org/roxfort/enaplo/model/House.java">
+      <point x="0.0" y="-49.0" />
+      <point x="0.0" y="38.0" />
+    </edge>
+    <edge source="Grade#file://C:/Users/bebe/Desktop/e-naplo/src/main/java/org/roxfort/enaplo/model/Grade.java" target="Student#file://C:/Users/bebe/Desktop/e-naplo/src/main/java/org/roxfort/enaplo/model/Student.java">
+      <point x="0.0" y="-49.0" />
+      <point x="0.0" y="49.0" />
+    </edge>
+    <edge source="Subject#file://C:/Users/bebe/Desktop/e-naplo/src/main/java/org/roxfort/enaplo/model/Subject.java" target="Grade#file://C:/Users/bebe/Desktop/e-naplo/src/main/java/org/roxfort/enaplo/model/Grade.java">
+      <point x="0.0" y="-38.0" />
+      <point x="0.0" y="49.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="87.0" y="249.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Properties</Category>
+    <Category>Embeddables</Category>
+    <Category>Superclasses</Category>
+  </Categories>
+</Diagram>
+
