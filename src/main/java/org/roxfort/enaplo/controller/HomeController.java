@@ -9,6 +9,7 @@ import org.roxfort.enaplo.repository.*;
 import org.roxfort.enaplo.repository.impl.*;
 
 import java.net.URL;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 public class HomeController implements Initializable {
@@ -36,6 +37,9 @@ public class HomeController implements Initializable {
 
     @FXML
     private TableColumn<Grade, String> tableColumnGradeValue;
+
+    @FXML
+    private TableColumn<Grade, String> tableColumnGradeDateRecorded;
 
     @FXML
     private ComboBox<Subject> comboBoxSubjects;
@@ -103,6 +107,10 @@ public class HomeController implements Initializable {
                 new SimpleStringProperty(grade.getValue().getSubject().getName()));
         tableColumnGradeValue.setCellValueFactory(grade ->
                 new SimpleStringProperty(String.valueOf(grade.getValue().getValue())));
+        tableColumnGradeDateRecorded.setCellValueFactory(grade ->
+                new SimpleStringProperty(grade.getValue().getDateRecorded().getYear() + "-" +
+                        grade.getValue().getDateRecorded().getMonth().getValue() + "-" +
+                        grade.getValue().getDateRecorded().getDayOfMonth()));
         tableViewGrades.setItems(grades);
     }
 
@@ -134,6 +142,7 @@ public class HomeController implements Initializable {
     private void tableViewHouses_Select() {
         House selectedHouse = getSelectedHouse();
         initializeTableViewStudents(selectedHouse.getName());
+        tableViewGrades.setItems(null);
     }
 
     @FXML
@@ -167,6 +176,9 @@ public class HomeController implements Initializable {
 
         gradeRepository.submitGrade(new Grade(selectedStudent, selectedSubject, gradeValue));
 
+
         // TODO: re init table on right ...
+        /*tableViewGrades.setItems(null);
+        initializeTableViewGrades(selectedStudent);*/
     }
 }

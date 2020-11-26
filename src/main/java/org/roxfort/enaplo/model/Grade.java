@@ -1,6 +1,8 @@
 package org.roxfort.enaplo.model;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "grades")
@@ -22,6 +24,9 @@ public class Grade {
     @Column(name = "value")
     private int value;
 
+    @Column(name = "date_recorded")
+    private LocalDateTime dateRecorded;
+
     public Grade() {
 
     }
@@ -42,5 +47,9 @@ public class Grade {
 
     public int getValue() {
         return value;
+    }
+
+    public LocalDateTime getDateRecorded() {
+        return dateRecorded;
     }
 }

@@ -77,7 +77,7 @@
                                              text="Tantárgy"/>
                                 <TableColumn fx:id="tableColumnGradeValue" minWidth="75.0" prefWidth="75.0"
                                              text="Érdemjegy"/>
-                                <TableColumn fx:id="tableColumnGradeDateRecorded" minWidth="75.0" prefWidth="75.0"
+                                <TableColumn fx:id="tableColumnGradeDateRecorded" minWidth="90.0" prefWidth="75.0"
                                              text="Rögzítve"/>
                             </columns>
                         </TableView>
