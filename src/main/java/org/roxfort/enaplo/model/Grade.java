@@ -25,7 +25,7 @@ public class Grade {
     private int value;
 
     @Column(name = "date_recorded")
-    private LocalDateTime dateRecorded;
+    private LocalDate dateRecorded;
 
     public Grade() {
 
@@ -49,7 +49,7 @@ public class Grade {
         return value;
     }
 
-    public LocalDateTime getDateRecorded() {
+    public LocalDate getDateRecorded() {
         return dateRecorded;
     }
 }
