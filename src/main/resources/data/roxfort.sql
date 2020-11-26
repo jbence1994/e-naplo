@@ -7,6 +7,7 @@ CREATE TABLE IF NOT EXISTS `grades` (
   `student_id` int(10) UNSIGNED NOT NULL,
   `subject_id` int(10) UNSIGNED NOT NULL,
   `value` int(10) UNSIGNED NOT NULL,
+  `date_recorded` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `student_id` (`student_id`),
   KEY `subject_id` (`subject_id`)
