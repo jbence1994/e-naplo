@@ -9,7 +9,6 @@ import org.roxfort.enaplo.repository.*;
 import org.roxfort.enaplo.repository.impl.*;
 
 import java.net.URL;
-import java.util.Date;
 import java.util.ResourceBundle;
 
 public class HomeController implements Initializable {
@@ -176,9 +175,6 @@ public class HomeController implements Initializable {
 
         gradeRepository.submitGrade(new Grade(selectedStudent, selectedSubject, gradeValue));
 
-
         // TODO: re init table on right ...
-        /*tableViewGrades.setItems(null);
-        initializeTableViewGrades(selectedStudent);*/
     }
 }
