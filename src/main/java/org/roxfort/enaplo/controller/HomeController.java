@@ -7,6 +7,7 @@ import javafx.scene.control.*;
 import org.roxfort.enaplo.model.*;
 import org.roxfort.enaplo.repository.*;
 import org.roxfort.enaplo.repository.impl.*;
+import org.roxfort.enaplo.utility.MessageBox;
 
 import java.net.URL;
 import java.util.ResourceBundle;

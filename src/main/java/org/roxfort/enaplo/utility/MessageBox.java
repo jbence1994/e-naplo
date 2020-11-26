@@ -1,4 +1,4 @@
-package org.roxfort.enaplo.controller;
+package org.roxfort.enaplo.utility;
 
 import javafx.scene.control.Alert;
 
