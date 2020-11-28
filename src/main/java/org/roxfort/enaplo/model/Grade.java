@@ -2,7 +2,6 @@ package org.roxfort.enaplo.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "grades")
